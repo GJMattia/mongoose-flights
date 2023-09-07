@@ -1,7 +1,17 @@
+html{
+  background-color: rgb(235, 235, 235);
+}
+
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+.plane{
+  font-size: 10rem;
+}
+
+
 
 h1{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -39,7 +49,7 @@ table td:nth-child(odd){
 }
 
 
-form{
+.flights-new{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +60,8 @@ form{
   font-size: 1.2rem;
   font-weight: 600;
 }
+
+
 
 .add-btn{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -68,4 +80,30 @@ form{
   background-color: darkblue;
 }
 
+.hello{
+  width:50rem;
+  font-weight: 900;
+  align-items: center;
+  justify-content: space-evenly;
+  padding:1rem;
+  display: flex;
+  background-color: #ff3535;
+ 
+}
 
+.add-des-btn{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  background-color: #91cfff;
+  width:12rem;
+  height: 2rem;
+  border:0;
+  border-radius: .5rem;
+  color: white;
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.add-des-btn:hover{
+  background-color: rgb(75, 165, 244);
+  cursor: pointer;
+}
