@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<h1>Please fill out the form bellow to add a ticket!</h1>
+
+<form class="add-ticket" action="/tickets/<%= flight._id %>" method="POST">
+  <label class="flight-no">FLIGHT: <%= flight.flightNo %></label>
+  <label>Pick a seat!</label>
+  <input
+    value="A1"
+    class="seat"
+    name="seat"
+    required
+    pattern="[A-F][1-9]\d?"
+    maxlength="2"
+  />
+  <label>Choose your ticket price!</label>
+  <select name="price">
+    <option value="200">$200 Basic</option>
+    <option value="250">$250 Middle Class</option>
+    <option value="300">$300 First Class</option>
+  </select>
+  <button class="add-des-btn" type="submit">Add Ticket</button>
+</form>
+<h5>
+  Please pick a seat column between A-F, and a row between 1-9! Example: A1, D5,
+  F9
+</h5>
+
+<%- include('../partials/footer') %>
