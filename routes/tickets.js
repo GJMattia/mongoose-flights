@@ -6,6 +6,6 @@ router.get('/new/:id', ticketsCtrl.new);
 
 router.post('/:id', ticketsCtrl.create);
 
-// router.post('/tickets/:id/tickets', ticketsCtrl.addToFlight);
+router.delete('/:id', ticketsCtrl.deleteTicket);
 
 module.exports = router;

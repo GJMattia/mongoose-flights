@@ -3,8 +3,11 @@ const Flight = require('../models/flight');
 
 module.exports = {
     new: newTicket,
-    create
+    create,
+    deleteTicket
 };
+
+
 
 async function newTicket(req, res){
     const flight = await Flight.findById(req.params.id);
@@ -23,13 +26,29 @@ async function create(req, res) {
             price,
         });
 
-        // Save the ticket to the database
+        // saves the ticket to the database
         await ticket.save();
 
-        // Redirect back to the flight page or wherever you want
+        // redirects back to the flight page or wherever i specify 
         res.redirect(`/flights/${flightId}`);
     } catch (err) {
         console.error(err);
-        res.status(500).send('Error creating ticket.');
     }
 }
+
+async function deleteTicket(req, res) {
+    //takes in url id and makes it the tickets id
+    const ticketId = req.params.id;
+    try {
+        // declares the ticket as it is looked up in the database
+        const ticket = await Ticket.findById(ticketId);
+        //declares the flight from the ticket item id so we can redirect later
+        const flightId = ticket.flight;
+        //looks up the ticket in the database and removes it
+        await Ticket.findByIdAndRemove(ticketId);
+        //redirects us to the page we were on based on the info stored in variable  
+      res.redirect(`/flights/${flightId}`); 
+    } catch (error) {
+      console.error(error);
+    }
+  }

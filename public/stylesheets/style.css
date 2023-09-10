@@ -162,3 +162,15 @@ table td:nth-child(odd){
   width:2.5rem;
   height:2.5rem;
 }
+
+.delete-btn{
+  border:0;
+  background-color:crimson;
+  color:white;
+  width:5rem;
+}
+
+.delete-btn:hover{
+  cursor: pointer;
+  background-color: darkred;
+}
